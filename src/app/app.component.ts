@@ -25,4 +25,17 @@ export class AppComponent {
       console.log('Mode web');
     }
   }
+
+  predracun(){
+    localStorage.setItem('gdesam','predracun');
+  
+  }
+  
+  racun(){
+    localStorage.setItem('gdesam','racun');
+  
+  }
+
+
+
 }

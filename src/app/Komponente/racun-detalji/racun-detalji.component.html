@@ -1,0 +1,64 @@
+<div class = "levo">
+
+    <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+      
+        <ng-container matColumnDef="id">
+          <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+        </ng-container>
+     
+        <ng-container matColumnDef="naziv">
+          <mat-cell *matCellDef="let row"> {{row.naziv}}</mat-cell>
+        </ng-container>
+     
+        <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" (click)="postaviPredracunLS(row.id)"></mat-row>
+      </mat-table>
+</div>
+
+<div class = "ostalo">
+    <p style="font-size: 25px; margin-left: 20px; margin-bottom: 0;">{{racun?.kupacBean?.firma}} {{racun?.racunotpremnicabroj}}</p>
+    <hr>
+
+    <div class = "ostalolevo">
+
+        <div class = "licnipodaci">
+            <h4>Licni podaci</h4>
+            <p>{{racun?.id}}</p>
+            <p>{{racun?.naziv}}</p>
+            <p>{{racun?.datumizdavanjaracuna}}</p>
+            <p>{{racun?.datumprometadobara}}</p>
+        </div>
+
+        <div class = "kupac">
+            <h4>Podaci o kupcu</h4>
+            <p>{{racun?.kupacBean?.ime}}</p>
+            <p>{{racun?.kupacBean?.prezime}}</p>
+            <p>{{racun?.kupacBean?.firma}}</p>
+            <p>{{racun?.kupacBean?.adresakupca}}</p>
+            <p>{{racun?.kupacBean?.email}}</p>
+            <p>{{racun?.kupacBean?.telefon}}</p>
+            <p>{{racun?.kupacBean?.pibkupca}}</p>
+            <p>{{racun?.kupacBean?.maticnibrojkupca}}</p>
+        </div>
+
+        <div class = "poslodavac">
+            <h4>Podaci o poslodavcu</h4>
+            <p>{{racun?.poslodavacBean?.ime}}</p>
+            <p>{{racun?.poslodavacBean?.prezime}}</p>
+            <p>{{racun?.poslodavacBean?.pibposlodavca}}</p>
+            <p>{{racun?.poslodavacBean?.maticnibrojposlodavca}}</p>
+            <p>{{racun?.poslodavacBean?.adresa}}</p>
+        </div>
+    </div>
+
+    <div class = "ostalodesno">
+        <h4 class = "stavke">Stavke predracuna</h4>
+        
+        <div class = "containerr">
+            <app-stavka-predracuna *ngIf="selektovanPredracun" [selektovanPredracun]="selektovanPredracun"></app-stavka-predracuna>
+        </div>
+
+    </div>
+
+
+
+</div>

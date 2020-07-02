@@ -1,0 +1,63 @@
+<div class = "levo">
+
+    <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+      
+        <ng-container matColumnDef="id">
+          <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+        </ng-container>
+     
+        <ng-container matColumnDef="naziv">
+          <mat-cell *matCellDef="let row"> {{row.naziv}}</mat-cell>
+        </ng-container>
+     
+        <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;" (click)="selectRow(row)" (click)="postaviPredracunLS(row.id)"></mat-row>
+      </mat-table>
+</div>
+
+<div class = "ostalo">
+    <p style="font-size: 25px; margin-left: 20px; margin-bottom: 0;">{{predracun?.kupacBean?.firma}} {{predracun?.racunotpremnicabroj}}</p>
+    <hr>
+
+    <div class = "ostalolevo">
+
+        <div class = "licnipodaci">
+            <h4>Licni podaci</h4>
+            <p>Id: {{predracun?.id}}</p>
+            <p>Naziv: {{predracun?.naziv}}</p>
+            <p>Datum izdavanja racuna: {{predracun?.datumizdavanjaracuna}}</p>
+            <p>Datum prometa dobara: {{predracun?.datumprometadobara}}</p>
+        </div>
+
+        <div class = "kupac">
+            <h4>Podaci o kupcu</h4>
+            <p>Ime: {{predracun?.kupacBean?.ime}}</p>
+            <p>Prezime: {{predracun?.kupacBean?.prezime}}</p>
+            <p>Email: {{predracun?.kupacBean?.email}}</p>
+            <p>Telefon: {{predracun?.kupacBean?.telefon}}</p>
+            <p>Firma: {{predracun?.kupacBean?.firma}}</p>
+            <p>Adresa: {{predracun?.kupacBean?.adresakupca}}</p>
+            <p>PIB: {{predracun?.kupacBean?.pibkupca}}</p>
+            <p>Maticni broj: {{predracun?.kupacBean?.maticnibrojkupca}}</p>
+        </div>
+
+        <div class = "poslodavac">
+            <h4>Podaci o poslodavcu</h4>
+            <p>Ime i prezime: {{predracun?.poslodavacBean?.ime}} {{predracun?.poslodavacBean?.prezime}}</p>
+            <p>Adresa: {{predracun?.poslodavacBean?.adresa}}</p>
+            <p>PIB: {{predracun?.poslodavacBean?.pibposlodavca}}</p>
+            <p>Maticni broj: {{predracun?.poslodavacBean?.maticnibrojposlodavca}}</p>
+        </div>
+    </div>
+
+    <div class = "ostalodesno">
+        <h4 class = "stavke">Stavke predracuna</h4>
+        
+        <div class = "containerr">
+            <app-stavka-predracuna *ngIf="selektovanPredracun" [selektovanPredracun]="selektovanPredracun"></app-stavka-predracuna>
+        </div>
+
+    </div>
+
+
+
+</div>

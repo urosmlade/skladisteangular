@@ -1,0 +1,67 @@
+<div class = "container">
+
+    <div class = "levo">
+        <form class = "example-form">
+        <mat-form-field>
+            <mat-select [(ngModel)]="data" placeholder="Predracun" name="predracun" [disabled] = "flag == 3"> 
+              <mat-option *ngFor="let predracun of predracuni" [value]="predracun">
+                {{ predracun.racunotpremnicabroj }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+        <button mat-button (click)="dodajFakturu()">Sacuvaj</button>
+    
+    </div>
+    
+    <!--
+    <div class = "levo">
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Naziv fakture</mat-label>
+                <input matInput placeholder="Naziv fakture" [(ngModel)]="data.naziv" name="naziv">
+            </mat-form-field>
+        </form>
+        
+        <form class="example-form">
+            <mat-form-field>
+                <input matInput [matDatepicker]="datumizdavanjaracuna" placeholder="Datum izdavanja racuna" [(ngModel)]="data.datumizdavanjaracuna"  name="datumizdavanjaracuna">
+                <mat-datepicker-toggle matSuffix [for]="datumizdavanjaracuna"></mat-datepicker-toggle>
+                <mat-datepicker #datumizdavanjaracuna></mat-datepicker>
+            </mat-form-field>
+        </form>
+    
+        
+        <form class="example-form">
+            <mat-form-field>
+                <input matInput [matDatepicker]="datumprometadobara" placeholder="Datum prometa dobara"  [(ngModel)]="data.datumprometadobara" name="datumprometadobara">
+                <mat-datepicker-toggle matSuffix [for]="datumprometadobara"></mat-datepicker-toggle>
+                <mat-datepicker #datumprometadobara></mat-datepicker>
+            </mat-form-field>
+        </form>
+    
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Racun-otpremnica broj</mat-label>
+                <input matInput placeholder="Racun-otpremnica broj" [(ngModel)]="data.racunotpremnicabroj" name="racunotpremnicabroj">
+            </mat-form-field>
+        </form>
+    
+        <form class = "example-form">
+            <mat-form-field>
+                <mat-select [(ngModel)]="data.placeno" placeholder="Placeno" name="placeno" [disabled] = "flag == 3"> 
+                  <mat-option *ngFor="let p of placeno" [value]="p">
+                    {{p}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+    
+      
+    
+    </div>
+    
+    
+    -->
+    
+    </div>

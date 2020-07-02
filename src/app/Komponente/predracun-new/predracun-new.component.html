@@ -1,0 +1,112 @@
+<div size="A4" class = "papir" id="papir"> 
+    <mat-icon aria-label="Pdf"  class = 'pdf' style="cursor: pointer;" data-html2canvas-ignore="true">picture_as_pdf</mat-icon>
+  <div id ='opisp'>
+      <p class = "predracuntekst">Predracun <span style="font-size: 25px;">132</span></p>
+  
+        <img src="assets\logo.jpeg" id="logo" alt="logo">
+  
+        <p id="poslodavac">Poslodavac</p>
+   
+
+        <p id='firmaposlodavac'>Joval Plast</p>
+        <p id='adresaposlodavac'>Kralja Petra 30</p>
+        <p id='emailposlodavac'>jovalplast.zp@gmail.com</p>
+        <p id='telefonposlodavac'>0654420442</p>
+    
+  
+        <p id="kupac">Kupac</p>
+        <mat-form-field id='firmakupca'>
+            <mat-select>
+                <mat-option *ngFor="let k of kupci" [value]="k.firma" >
+                    {{k.firma}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <p id='adresakupca'>{{kupac?.email}}</p>
+        <p id='emailkupca'>{{predracun?.kupacBean?.email}}</p>
+        <p id='telefonkupca'>{{predracun?.kupacBean?.telefon}}</p>
+      </div>
+  
+  <!--
+  <div class = "tabela" id="tabela">
+  
+    <div class="container">
+        <mat-table [dataSource]="dataSource" class="mat-cell" matSort >
+            
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+            <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef><span> Ukupno </span></mat-footer-cell>
+  
+          </ng-container>
+      
+          <ng-container matColumnDef="proizvodBean">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Proizvod</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.proizvodBean.naziv}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  
+          </ng-container>
+  
+          <ng-container matColumnDef="kolicina">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Kol.</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.kolicina}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  
+          </ng-container>
+  
+          <ng-container matColumnDef="cenapojed">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Cena po kom.</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.proizvodBean?.cena}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+  
+          </ng-container>
+  
+          <ng-container matColumnDef="vrednostbezpdv">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Vr. bez PDV</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.vrednostbezpdv}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef><span> {{ukupnaZaradaBezPdv}} </span> </mat-footer-cell>
+  
+          </ng-container>
+  
+            <ng-container matColumnDef="stopapdv">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Stopa PDV</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.stopapdv}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef> </mat-footer-cell>
+          </ng-container>
+  
+          <ng-container matColumnDef="vrednostpdv">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Vr. PDV</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.vrednostpdv}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef> <span > {{ukupnoPdv}} </span> </mat-footer-cell>
+  
+          </ng-container>
+  
+          <ng-container matColumnDef="vrednostsapdv">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Vr. sa PDV</mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.vrednostsapdv}}</mat-cell>
+            <mat-footer-cell *matFooterCellDef><span> {{ukupnaZaradaSaPdv}}</span> </mat-footer-cell>
+  
+          </ng-container>
+  
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          <mat-footer-row *matFooterRowDef="displayedColumns" ></mat-footer-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[10]" showFirstLastButtons data-html2canvas-ignore="true"></mat-paginator>
+  
+       
+      </div>
+    
+  </div> 
+  <p class = "strana">Strana {{paginator.pageIndex+1}}/{{paginator.getNumberOfPages()}}</p>-->
+ <!-- <p class = 'potpisposlodavca' *ngIf='paginator.pageIndex+1 == paginator.getNumberOfPages()'>Potpis poslodavca</p>
+  <p class = 'potpiskupca' *ngIf='paginator.pageIndex+1 == paginator.getNumberOfPages()'>Potpis kupca</p>
+  -->
+  </div>
+  
+  
+  
+  <!--
+  <iframe src="https://www.ilovepdf.com/compress_pdf" style="width: 100%;height: 100%;"></iframe>
+  
+  -->

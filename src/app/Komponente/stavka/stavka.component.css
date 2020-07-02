@@ -1,0 +1,64 @@
+.container {
+    
+    display: flex;
+    flex-direction: column;
+   }
+   
+   .mat-form-field {
+    font-size: 14px;
+    flex-grow: 1;
+    margin-top: 8px;
+   }
+   
+   /* Mat table */
+   .no-results {
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+    font-size: 14px;
+    font-style: italic;
+   }
+   
+   .title-center {
+    margin: 0 auto;
+   }
+
+   .kategorije{
+       min-width: 150px;
+       float:left;
+   }
+
+   .mat-list-item:first-child{
+       cursor: pointer;
+       margin-top: 50px;
+       font-size: 15px;
+   }
+
+   .mat-list-item{
+    cursor: pointer;
+    }
+
+
+   .kategorija{
+    float: left;
+    margin-bottom: 0;
+    margin-left: 15px;
+    }
+
+   .dugmekategorija{
+    float: left;    
+    margin-top: 18px;   
+    margin-left: 10px;
+    cursor: pointer;
+    }
+
+
+    .mat-cell:nth-child(1),
+    .mat-header-cell:nth-child(1){
+     flex: 0 0 7%;
+    }
+    
+
+ 
+    
+   

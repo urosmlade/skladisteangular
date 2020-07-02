@@ -1,0 +1,72 @@
+
+
+.levo{
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid gray;
+    display: inline-block;
+    padding-top: 65px;
+}
+
+
+.ostalo{
+    position: absolute;
+    height: 100%;
+    width:calc(100% - 300px);
+    display: inline-block;
+}
+
+.licnipodaci{
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.kupac{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.poslodavac{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.fakturekupca{
+    cursor: pointer;
+    margin: 100px;
+}
+
+.ostalolevo{
+    width:15%;
+    height: 80%;
+   /* background-color: red;*/
+    position: absolute;
+    top:70px;
+
+}
+
+.ostalodesno{
+    width:80%;
+    height: 80%;
+   /* background-color: yellow;*/
+    position: absolute;
+    top:70px;
+    right: 0;
+}
+
+
+.fakturadetalji{
+    /*background-color: blue;*/
+    height:50%;
+}
+
+.stavke{
+    margin-top: 35px;
+
+}
+
+
+.dijagram{
+    width:60%;
+    margin: auto;
+}

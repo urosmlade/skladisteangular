@@ -1,0 +1,38 @@
+<p class = "naslov">Pocetna strana</p>
+
+<div class = "statistika">
+    <div class = "prvo">
+        <p>Broj razlicitih proizvoda</p>
+        <p>{{ukupnoRazlicitihProizvoda}}</p>
+    </div>
+
+    <div class = "drugo">
+        <p>Ukupno na skladistu</p>
+        <p>{{ukupnoProizvoda}}</p>
+    </div>
+
+    <div class = "drugo">
+        <p>Ukupno kupaca</p>
+        <p>{{ukupnoKupaca}}</p>
+    </div>
+
+    <div class = "drugo">
+        <p>Ukupna zarada</p>
+        <p>{{ukupnaZarada}}</p>
+    </div>
+
+
+</div>
+
+
+<div class = "dijagram">
+    <div style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>

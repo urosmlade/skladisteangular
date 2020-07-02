@@ -1,0 +1,149 @@
+<mat-toolbar color="primary">
+    <span class="title-center">Racuni</span>
+   </mat-toolbar>
+   
+   <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+
+   <div class="container">
+    <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+        
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+      </ng-container>
+   
+      <ng-container matColumnDef="naziv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Naziv</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.naziv}}</mat-cell>
+      </ng-container>
+   
+      <ng-container matColumnDef="placeno">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Placeno</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.placeno}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="predracun">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Predracun</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.predracunBean.id}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="firma">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Firma</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.kupacBean.firma}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="akcije">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button color="primary" (click)="openDialog(1)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+   
+        <mat-cell *matCellDef="let row; let i=index;">
+          <button mat-icon-button color="primary">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" [routerLink]="['/pdf']">
+            <mat-icon aria-label="Pdf">picture_as_pdf</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+   
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;" (click)="selektujRacun(row.predracunBean.id)"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+
+   </div>
+  
+  
+  
+  
+  <!--
+  
+  
+  
+  
+  
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input type="text"
+               placeholder="Kupac"
+               aria-label="Text"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  
+  
+  
+  
+  
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="kupac">
+          <th mat-header-cell *matHeaderCellDef> Kupac </th>
+          <td mat-cell *matCellDef="let element"> 
+              
+              <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <input type="text"
+                           placeholder="Kupac"
+                           aria-label="Text"
+                           matInput
+                           [formControl]="myControl"
+                           [matAutocomplete]="auto">
+                    <mat-autocomplete #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                </form>
+          
+          </td>
+      </ng-container>
+      
+    
+  
+  
+  
+  
+      <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <mat-label>Favorite food</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi">
+          </mat-form-field>
+        </form>
+  
+  
+      <ng-container matColumnDef="adresa">
+        <th mat-header-cell *matHeaderCellDef> Adresa </th>
+        <td mat-cell *matCellDef="let element"> {{element.adresa}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="maticniBroj">
+          <th mat-header-cell *matHeaderCellDef> Maticni broj </th>
+          <td mat-cell *matCellDef="let element"> {{element.maticniBroj}} </td>
+      </ng-container>
+  
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    -->

@@ -1,0 +1,51 @@
+<div class = "levo">
+    <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor='let k of kupci' (click)="postaviKupcaLS(k.id)" style="cursor:pointer">{{k.ime}} {{k.prezime}}</mat-list-item>
+    </mat-list>
+</div>
+
+<div class = "ostalo">
+    <p style="font-size: 25px; margin-left: 20px; margin-bottom: 0;">{{kupac?.ime}} {{kupac?.prezime}}</p>
+    <hr>
+
+    <div class = "ostalolevo">
+
+        <div class = "licnipodaci">
+            <h4>Licni podaci</h4>
+            <p>Ime i prezime: {{kupac?.ime}} {{kupac?.prezime}}</p>
+            <p>Email: {{kupac?.email}}</p>
+            <p>Telefon: {{kupac?.telefon}}</p>
+        </div>
+
+        <div class = "firma">
+            <h4>Firma</h4>
+            <p>Naziv: {{kupac?.firma}}</p>
+            <p>Adresa: {{kupac?.adresakupca}}</p>
+            <p>Maticni broj: {{kupac?.maticnibrojkupca}}</p>
+            <p>PIB: {{kupac?.pibkupca}}</p>
+        </div>
+
+        <div class = "fakture">
+            <h4>Fakture kupca</h4>
+            <mat-list-item *ngFor='let r of racuni' class ="fakturekupca">{{r.naziv}}</mat-list-item>
+        </div>
+    </div>
+
+    <div class = "ostalodesno">
+        <h4 class = "ukupnitrosak">Ukupni trosak </h4>
+        {{trosak}}
+
+
+        <div class = "dijagram">
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+    </div>
+</div>

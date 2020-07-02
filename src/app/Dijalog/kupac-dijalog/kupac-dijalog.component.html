@@ -1,0 +1,75 @@
+<h3 mat-dialog-title *ngIf="flag == 1">Dodavanje kupca</h3>
+<h3 mat-dialog-title *ngIf="flag == 2">Modifikacija kupca: {{data.id}}</h3>
+<h3 mat-dialog-title *ngIf="flag == 3">Brisanje kupca: {{data.id}}</h3>
+
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Ime</mat-label>
+        <input matInput placeholder="Ime" [(ngModel)]="data.ime" name="ime" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Prezime</mat-label>
+        <input matInput placeholder="Prezime" [(ngModel)]="data.prezime" name="prezime" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" [(ngModel)]="data.email" name="email" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Telefon</mat-label>
+        <input matInput placeholder="Telefon" [(ngModel)]="data.telefon" name="telefon" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Firma</mat-label>
+        <input matInput placeholder="Firma" [(ngModel)]="data.firma" name="firma" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Adresa</mat-label>
+        <input matInput placeholder="Adresa" [(ngModel)]="data.adresakupca" name="adresakupca" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Maticni broj</mat-label>
+        <input matInput placeholder="Maticni broj" [(ngModel)]="data.maticnibrojkupca" name="maticnibrojkupca" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>PIB</mat-label>
+        <input matInput placeholder="PIB" [(ngModel)]="data.pibkupca" name="pibkupca" [disabled] = "flag == 3">
+    </mat-form-field>
+</form>
+  
+
+<div mat-dialog-actions>
+    <button mat-button *ngIf="flag == 1"  [mat-dialog-close]="1" (click)="add()" >Sačuvaj</button>
+    <button mat-button *ngIf="flag == 2"  [mat-dialog-close]="1" (click)="update()" >Sačuvaj</button>
+    <button mat-button *ngIf="flag == 3"  [mat-dialog-close]="1" (click)="delete()">Obriši</button>
+    <button mat-button (click)="cancel()">Poništi</button>
+  </div>

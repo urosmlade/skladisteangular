@@ -1,0 +1,28 @@
+<div class = "container">
+
+    <div class = "levo">
+      
+      <form class="example-form">
+        <mat-form-field>
+            <mat-select [(ngModel)]="data.proizvodBean" placeholder="Proizvod" name="proizvod">
+              <mat-option *ngFor="let proizvod of proizvodi" [value]="proizvod">
+                {{ proizvod.naziv }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </form>
+
+      
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Kolicina</mat-label>
+                <input matInput placeholder="Kolicina" [(ngModel)]="data.kolicina" name="kolicina" autocomplete="off" >
+                <mat-hint [ngClass]="{'nijeok':data.kolicina > data?.proizvodBean?.kolicina}">Stanje na skladistu: {{data?.proizvodBean?.kolicina}}</mat-hint>
+            </mat-form-field>
+        </form>
+
+        <button mat-button (click)="dodajStavku()" [disabled]="data.kolicina > data?.proizvodBean?.kolicina">Sacuvaj</button>
+
+    </div>
+</div>

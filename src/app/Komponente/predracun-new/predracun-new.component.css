@@ -1,0 +1,224 @@
+.predracuntekst{
+    position: absolute;
+    font-size: 30px;
+    left:330px;
+    top:30px;
+}
+
+
+#logo{
+    width: 250px;
+    position: absolute;
+    left: 30px;
+    top:30px;
+}
+
+
+
+#poslodavac{
+    position: absolute;
+    left: 30px;
+    top:150px;
+    font-size: 12px;
+    border-right: 1px solid black;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    padding-right: 30px;
+}
+
+#firmaposlodavac{
+    position: absolute;
+    left: 140px;
+    top:160px;
+    font-size: 12px;
+}
+
+
+
+#adresaposlodavac{
+    position: absolute;
+    left: 140px;
+    top:190px;
+    font-size: 12px;
+}
+
+
+#emailposlodavac{
+    position: absolute;
+    left: 140px;
+    top: 220px;
+    font-size: 12px;
+}
+
+#telefonposlodavac{
+    position: absolute;
+    left: 140px;
+    top: 250px;
+    font-size: 12px;
+}
+
+
+
+#kupac{
+    position: absolute;
+    left: 400px;
+    top:150px;
+    font-size: 12px;
+    border-right: 1px solid black;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    padding-right: 30px;
+
+}
+
+
+#firmakupca{
+    position: absolute;
+    left: 480px;
+    top:160px;
+    font-size: 12px;
+}
+
+
+#adresakupca{
+    position: absolute;
+    left: 480px;
+    top:190px;
+    font-size: 12px;
+}
+
+
+#emailkupca{
+    position: absolute;
+    left: 480px;
+    top:220px;
+    font-size: 12px;
+}
+
+
+#telefonkupca{
+    position: absolute;
+    left:480px;
+    top:250px;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.prvo{
+    position: absolute;
+    top:200px;
+    left:30px;
+    text-align: left;
+    font-size: 16px;
+    padding-right: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.drugo{
+    position: absolute;
+    top:260px;
+    right:30px;
+    text-align: left;
+    font-size: 25px;
+}
+
+
+
+.tabela{
+    position: absolute;
+    top:320px;
+    width: 100%;
+}
+
+.container{
+    width:100%;
+}
+
+.mat-header-cell{
+    color:black;
+
+}
+
+
+.mat-cell{
+    color:black;
+    text-align: right;
+}
+
+
+.potpisposlodavca{
+    padding-bottom: 70px;
+    padding-right: 50px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+}
+
+.potpiskupca{
+    padding-bottom: 70px;
+    padding-right: 50px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    bottom: 50px;
+    left: 350px;
+}
+
+
+
+
+
+.papir {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    position: relative;
+}
+
+.papir[size="A4"] {  
+    width: 21cm;
+    height: 29.7cm; 
+}
+
+
+
+.strana{
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    font-size: 13px;
+}
+
+
+.pdf{
+    position: absolute;
+    right: 30px;
+    top:30px;
+}

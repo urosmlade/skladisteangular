@@ -1,0 +1,83 @@
+   
+<div class="container mat-elevation-z1">
+    <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+        
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+      </ng-container>
+   
+      <ng-container matColumnDef="proizvodBean">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Stavka</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.proizvodBean.naziv}}</mat-cell>
+      </ng-container>
+
+
+
+      <ng-container matColumnDef="kolicina">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Kolicina</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.kolicina}}</mat-cell>
+      </ng-container>
+   
+
+      <ng-container matColumnDef="cenapojed">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Cena po jedinici</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.proizvodBean.cena}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="gramaza">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Gramaza</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.proizvodBean.gramaza}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="vrednostbezpdv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Vrednost bez pdv</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.vrednostbezpdv}}</mat-cell>
+      </ng-container>
+   
+      <ng-container matColumnDef="stopapdv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Stopa pdv-a</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.stopapdv}}%</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="vrednostpdv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Vrednost pdv-a</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.vrednostpdv}}</mat-cell>
+      </ng-container>
+   
+
+      <ng-container matColumnDef="vrednostsapdv">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Vrednost sa pdv</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.vrednostsapdv}}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="akcije" *ngIf = "this.gdesamb">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button color="primary" (click)="openDialog(1,selektovanPredracun)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+   
+        <mat-cell *matCellDef="let row; let i=index;">
+          <button mat-icon-button color="primary">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" >
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+   
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+    </mat-table>
+  
+   </div>
+
+  
+  
+  

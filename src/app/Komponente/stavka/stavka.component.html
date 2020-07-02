@@ -1,0 +1,89 @@
+<mat-toolbar color="primary">
+    <span class="title-center">Svi artikli</span>
+  </mat-toolbar>
+  
+  
+  
+  <div class = "kategorije">
+   
+    <div>
+        <h3 class = "kategorija">Kategorije</h3>
+        <mat-icon class = "dugmekategorija" (click)="dijalogKategorija(1)">add</mat-icon>
+    </div>
+  
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor='let k of kategorije' (click)="stavkaPoKategoriji(k.id)">{{k.naziv}}</mat-list-item>
+      </mat-list>
+    </div>
+  
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    
+     <div class="container mat-elevation-z1">
+      <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+          
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+          <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+        </ng-container>
+     
+        <ng-container matColumnDef="naziv">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Naziv</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.naziv}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="cena">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Cena</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.cena}}</mat-cell>
+        </ng-container>
+  
+  
+        <ng-container matColumnDef="kolicina">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Kolicina</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.kolicina}}</mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="gramaza">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Gramaza</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.gramaza}}</mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="ukupnagramaza">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Ukupna gramaza</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.ukupnaGramaza}}</mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="kategorija">
+          <mat-header-cell *matHeaderCellDef>Kategorija</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.kategorijaBean.naziv}}</mat-cell>
+        </ng-container>
+     
+        <ng-container matColumnDef="akcije">
+          <mat-header-cell *matHeaderCellDef>
+            <button mat-icon-button color="primary" (click)="openDialogn(1)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-header-cell>
+     
+          <mat-cell *matCellDef="let row; let i=index;">
+            <button mat-icon-button color="primary" (click)="openDialog(2,row.id, row.naziv, row.cena, row.kolicina, row.gramaza, row.kategorijaBean)">
+              <mat-icon aria-label="Edit">edit</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="openDialog(3,row.id, row.naziv, row.cena, row.kolicina,row.gramaza, row.kategorijaBean)">
+              <mat-icon aria-label="Delete">delete</mat-icon>
+            </button>
+           
+              <mat-icon  matTooltip="Na stanju imate manje od 50 komada" style="color: red;" *ngIf="row.kolicina < 50">warning</mat-icon>
+  
+            </mat-cell>
+        </ng-container>
+     
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row style="cursor: pointer" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+  
+     </div>
+    
+     

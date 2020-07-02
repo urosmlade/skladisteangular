@@ -1,0 +1,84 @@
+<mat-toolbar color="primary">
+    <span class="title-center">Kupci</span>
+  </mat-toolbar>
+  
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+  <div class="container mat-elevation-z1">
+    <mat-table [dataSource]="dataSource" class="mat-cell" matSort>
+        
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+        <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+      </ng-container>
+   
+      <ng-container matColumnDef="ime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Ime</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.ime}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="prezime">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Prezime</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.prezime}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.email}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="telefon">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Telefon</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.telefon}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="adresa">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Adresa</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.adresakupca}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="firma">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Firma</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.firma}}</mat-cell>
+      </ng-container>
+   
+
+      <ng-container matColumnDef="maticniBrojKupca">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Maticni broj</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.maticnibrojkupca}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="pibkupca">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>PIB</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.pibkupca}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="akcije">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-icon-button color="primary" (click)="openDialogn(1)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-header-cell>
+   
+        <mat-cell *matCellDef="let row; let i=index;" >
+          <button mat-icon-button color="primary" (click)="openDialog(2, row.id,row.ime, row.prezime, row.email, row.telefon, row.firma, row.adresakupca, row.maticnibrojkupca, row.pibkupca)">
+            <mat-icon aria-label="Edit">edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="openDialog(3, row.id,row.ime, row.prezime, row.email, row.telefon, row.firma, row.adresakupca, row.maticnibrojkupca, row.pibkupca)">
+            <mat-icon aria-label="Delete">delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+   
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row style="cursor: pointer;" *matRowDef="let row; columns: displayedColumns;" (click)="selektujKupca(row.id)"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+
+   </div>

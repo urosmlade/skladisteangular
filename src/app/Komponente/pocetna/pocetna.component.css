@@ -1,0 +1,50 @@
+.naslov{
+    margin:20px;
+    font-size: 25px;
+}
+
+
+.statistika{
+   /* outline: gray;
+    outline-style: solid;
+    outline-width: 1px;*/
+    width:90%;
+    height:100px;
+    margin: auto;
+}
+
+
+
+.prvo{
+    display: inline-block;
+    width:200px;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 20px;
+    height: 100px;
+    padding-top:10px;
+    padding-left: 20px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+
+}
+
+
+.drugo{
+    display: inline-block;
+    width:200px;
+    margin-left: 50px;
+    background-color: white;
+    border-radius: 20px;
+    height: 100px;
+    padding-top:10px;
+    padding-left: 20px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+
+}
+
+
+.dijagram{
+    width:50%;
+    margin: auto;
+    margin-top: 100px;
+}

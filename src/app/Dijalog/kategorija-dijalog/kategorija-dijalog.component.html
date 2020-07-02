@@ -1,0 +1,11 @@
+<h3>Dodavanje kategorije</h3>
+
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Naziv</mat-label>
+      <input matInput placeholder="Naziv" [(ngModel)]="data.naziv" name="naziv">
+    </mat-form-field>
+  </form>
+  
+  <button mat-button (click)="addKategorija()">Sacuvaj</button>
